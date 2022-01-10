@@ -1,0 +1,169 @@
+<html>
+
+<head>
+<title> Gagnasöfn og SQL, lausnir á æfingum 2</title>
+</head>
+
+<body>
+
+<img src = "endurmennt.jpg" align=left hspace=20><p>
+<h1 align="center">
+Gagnasöfn og SQL
+</h1>
+
+<h1 align="center">
+Lausnir á tímaæfingum 11. ágúst
+</h1>
+
+<br><br>
+<hr>
+
+<b>Æfingar um aðrar SQL skipanir:</b>
+<ul>
+  <li> Hækkið stigin hjá öllum félagsmönnum um 50
+   <pre>
+        UPDATE felagar
+            SET stig = stig+50;
+
+   </pre>
+  <li> Búið til töfluna tilraun með dálkunum a (heiltala) og b (10 stafa texti)
+   <pre>
+        CREATE TABLE tilraun (
+            a INTEGER,
+            b CHAR(10));
+
+   </pre>
+  <li> Setjið eina línu inní töfluna tilraun
+    <pre>
+        INSERT INTO tilraun VALUES (5, 'Halló');
+
+    </pre>
+     <li> Skoðið töfluna með select
+    <pre>
+        SELECT * FROM tilraun;
+
+    </pre>
+     <li> Eyðið töflunni
+    <pre>
+        DROP TABLE tilraun;
+
+    </pre>
+   </ul>
+</ul>
+
+<hr>
+<b>Æfingar um gagnainnflutning og -útflutning í SQLite:</b>
+<ul>
+  <li> Náið í skipanaskránna countries.sql
+   <pre>
+        [Ná í skránna á http://notendur.hi.is/hh/kennsla/sql1/countries.sql]
+
+   </pre>
+  <li> Lesið hana inní SQLite
+   <pre>
+        .read countries.sql
+
+   </pre>
+  <li> Skoðið nýju töfluna countries
+   <pre>
+        SELECT * FROM countries;
+
+   </pre>
+  <li> Setjið innihald töflunnar í CSV-skrá
+   <pre>
+        .header off
+        .mode list
+        .separator ;
+        .output countries.csv
+        SELECT * FROM countries;
+        .output stdout
+
+   </pre>
+  <li> Flytjið CSV-skránna inn í Excel
+   <pre>
+        [Opna skránna countries.csv í Excel]
+
+   </pre>
+  <li> Tæmið töfluna countries (með delete)
+   <pre>
+        DELETE FROM countries;
+
+   </pre>
+  <li> Hlaðið inn í hana úr CSV-skránni
+   <pre>
+        .import countries.csv countries
+
+   </pre>
+
+</ul>
+
+<hr>
+<b>Æfingar um samsöfnun (<i>aggregrates</i>) og hópun (<i>group by</i>) í SQL:</b>
+<ul>
+  <li> Sýna heildarfjölda daga í útleigu fyrir hvert sumarhús
+   <pre>
+        SELECT husnr, sum(fj_daga) FROM leigur
+            GROUP BY husnr;
+
+   </pre>
+  <li> Sýna fjölda leiga eftir dagafjölda (þ.e. helgar- eða vikuleiga)
+   <pre>
+        SELECT fj_daga, count(*) FROM leigur
+            GROUP BY fj_daga;
+
+   </pre>
+  <li> Sýna meðalfjölda stiga eftir inngönguári, ef fleiri en einn á því ári
+   <pre>
+        SELECT inng_ar, avg(stig) FROM felagar
+            GROUP BY inng_ar
+            HAVING count(*) &gt; 1;
+
+   </pre>
+</ul>
+
+
+<hr>
+<b>Æfingar um NULL gildi:</b>
+<ul>
+  <li> Setjið línu inn í töfluna <tt>felagar</tt> með engum stigum.
+   <pre>
+        INSERT INTO felagar (fnr, nafn, postnr, inng_ar)
+            VALUES (66, 'Helgi', '600', 2021);
+
+   </pre>
+  <li> Sýnið félaga í röð eftir stigum.  Koma NULL með?
+   <pre>
+        SELECT * FROM felagar ORDER BY stig DESC;
+
+   </pre>
+  <li> Finnið meðalfjölda stiga hjá félagsmönnum.  Er NULL gildið með?
+   <pre>
+        SELECT avg(stig) FROM felagar;
+   </pre>
+     hefur aðra útkomu en
+   <pre>
+        SELECT sum(stig) / count(*) FROM felagar;
+    </pre>
+  <li> Breytið skilgreiningu töflunnar <tt>sumarhus</tt> þannig að <tt>fermetrar</tt> megi ekki vera NULL
+   <pre>
+        CREATE TABLE sumarhus(
+                husnr INTEGER,
+                stadur VARCHAR(50),
+                fermetrar INTEGER NOT NULL,
+                fj_ruma INTEGER);
+
+   </pre>
+   <li> Reynið síðan að setja inn NULL þar
+    <pre>
+        INSERT INTO sumarhus (husnr, stadur, fj_ruma)
+            VALUES (1100, 'Fludir 2', 5);
+
+   </pre>
+</ul>
+
+<hr>
+<p>
+<a href="mailto:hh (hja) hi.is">hh (hja) hi.is</a>, 11. ágúst, 2021.
+</body>
+
+</html>
