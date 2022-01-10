@@ -1,49 +1,50 @@
 <html>
 
 <head>
-<title> Gagnasöfn og SQL, lausnir á æfingum 2</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title> GagnasÃ¶fn og SQL, lausnir Ã¡ Ã¦fingum 2</title>
 </head>
 
 <body>
 
 <img src = "endurmennt.jpg" align=left hspace=20><p>
 <h1 align="center">
-Gagnasöfn og SQL
+GagnasÃ¶fn og SQL
 </h1>
 
 <h1 align="center">
-Lausnir á tímaæfingum 11. ágúst
+Lausnir Ã¡ tÃ­maÃ¦fingum 11. Ã¡gÃºst
 </h1>
 
 <br><br>
 <hr>
 
-<b>Æfingar um ağrar SQL skipanir:</b>
+<b>Ã†fingar um aÃ°rar SQL skipanir:</b>
 <ul>
-  <li> Hækkiğ stigin hjá öllum félagsmönnum um 50
+  <li> HÃ¦kkiÃ° stigin hjÃ¡ Ã¶llum fÃ©lagsmÃ¶nnum um 50
    <pre>
         UPDATE felagar
             SET stig = stig+50;
 
    </pre>
-  <li> Búiğ til töfluna tilraun meğ dálkunum a (heiltala) og b (10 stafa texti)
+  <li> BÃºiÃ° til tÃ¶fluna tilraun meÃ° dÃ¡lkunum a (heiltala) og b (10 stafa texti)
    <pre>
         CREATE TABLE tilraun (
             a INTEGER,
             b CHAR(10));
 
    </pre>
-  <li> Setjiğ eina línu inní töfluna tilraun
+  <li> SetjiÃ° eina lÃ­nu innÃ­ tÃ¶fluna tilraun
     <pre>
-        INSERT INTO tilraun VALUES (5, 'Halló');
+        INSERT INTO tilraun VALUES (5, 'HallÃ³');
 
     </pre>
-     <li> Skoğiğ töfluna meğ select
+     <li> SkoÃ°iÃ° tÃ¶fluna meÃ° select
     <pre>
         SELECT * FROM tilraun;
 
     </pre>
-     <li> Eyğiğ töflunni
+     <li> EyÃ°iÃ° tÃ¶flunni
     <pre>
         DROP TABLE tilraun;
 
@@ -52,24 +53,24 @@ Lausnir á tímaæfingum 11. ágúst
 </ul>
 
 <hr>
-<b>Æfingar um gagnainnflutning og -útflutning í SQLite:</b>
+<b>Ã†fingar um gagnainnflutning og -Ãºtflutning Ã­ SQLite:</b>
 <ul>
-  <li> Náiğ í skipanaskránna countries.sql
+  <li> NÃ¡iÃ° Ã­ skipanaskrÃ¡nna countries.sql
    <pre>
-        [Ná í skránna á http://notendur.hi.is/hh/kennsla/sql1/countries.sql]
+        [NÃ¡ Ã­ skrÃ¡nna Ã¡ http://notendur.hi.is/hh/kennsla/sql1/countries.sql]
 
    </pre>
-  <li> Lesiğ hana inní SQLite
+  <li> LesiÃ° hana innÃ­ SQLite
    <pre>
         .read countries.sql
 
    </pre>
-  <li> Skoğiğ nıju töfluna countries
+  <li> SkoÃ°iÃ° nÃ½ju tÃ¶fluna countries
    <pre>
         SELECT * FROM countries;
 
    </pre>
-  <li> Setjiğ innihald töflunnar í CSV-skrá
+  <li> SetjiÃ° innihald tÃ¶flunnar Ã­ CSV-skrÃ¡
    <pre>
         .header off
         .mode list
@@ -79,17 +80,17 @@ Lausnir á tímaæfingum 11. ágúst
         .output stdout
 
    </pre>
-  <li> Flytjiğ CSV-skránna inn í Excel
+  <li> FlytjiÃ° CSV-skrÃ¡nna inn Ã­ Excel
    <pre>
-        [Opna skránna countries.csv í Excel]
+        [Opna skrÃ¡nna countries.csv Ã­ Excel]
 
    </pre>
-  <li> Tæmiğ töfluna countries (meğ delete)
+  <li> TÃ¦miÃ° tÃ¶fluna countries (meÃ° delete)
    <pre>
         DELETE FROM countries;
 
    </pre>
-  <li> Hlağiğ inn í hana úr CSV-skránni
+  <li> HlaÃ°iÃ° inn Ã­ hana Ãºr CSV-skrÃ¡nni
    <pre>
         .import countries.csv countries
 
@@ -98,21 +99,21 @@ Lausnir á tímaæfingum 11. ágúst
 </ul>
 
 <hr>
-<b>Æfingar um samsöfnun (<i>aggregrates</i>) og hópun (<i>group by</i>) í SQL:</b>
+<b>Ã†fingar um samsÃ¶fnun (<i>aggregrates</i>) og hÃ³pun (<i>group by</i>) Ã­ SQL:</b>
 <ul>
-  <li> Sına heildarfjölda daga í útleigu fyrir hvert sumarhús
+  <li> SÃ½na heildarfjÃ¶lda daga Ã­ Ãºtleigu fyrir hvert sumarhÃºs
    <pre>
         SELECT husnr, sum(fj_daga) FROM leigur
             GROUP BY husnr;
 
    </pre>
-  <li> Sına fjölda leiga eftir dagafjölda (ş.e. helgar- eğa vikuleiga)
+  <li> SÃ½na fjÃ¶lda leiga eftir dagafjÃ¶lda (Ã¾.e. helgar- eÃ°a vikuleiga)
    <pre>
         SELECT fj_daga, count(*) FROM leigur
             GROUP BY fj_daga;
 
    </pre>
-  <li> Sına meğalfjölda stiga eftir inngönguári, ef fleiri en einn á şví ári
+  <li> SÃ½na meÃ°alfjÃ¶lda stiga eftir inngÃ¶nguÃ¡ri, ef fleiri en einn Ã¡ Ã¾vÃ­ Ã¡ri
    <pre>
         SELECT inng_ar, avg(stig) FROM felagar
             GROUP BY inng_ar
@@ -123,28 +124,28 @@ Lausnir á tímaæfingum 11. ágúst
 
 
 <hr>
-<b>Æfingar um NULL gildi:</b>
+<b>Ã†fingar um NULL gildi:</b>
 <ul>
-  <li> Setjiğ línu inn í töfluna <tt>felagar</tt> meğ engum stigum.
+  <li> SetjiÃ° lÃ­nu inn Ã­ tÃ¶fluna <tt>felagar</tt> meÃ° engum stigum.
    <pre>
         INSERT INTO felagar (fnr, nafn, postnr, inng_ar)
             VALUES (66, 'Helgi', '600', 2021);
 
    </pre>
-  <li> Sıniğ félaga í röğ eftir stigum.  Koma NULL meğ?
+  <li> SÃ½niÃ° fÃ©laga Ã­ rÃ¶Ã° eftir stigum.  Koma NULL meÃ°?
    <pre>
         SELECT * FROM felagar ORDER BY stig DESC;
 
    </pre>
-  <li> Finniğ meğalfjölda stiga hjá félagsmönnum.  Er NULL gildiğ meğ?
+  <li> FinniÃ° meÃ°alfjÃ¶lda stiga hjÃ¡ fÃ©lagsmÃ¶nnum.  Er NULL gildiÃ° meÃ°?
    <pre>
         SELECT avg(stig) FROM felagar;
    </pre>
-     hefur ağra útkomu en
+     hefur aÃ°ra Ãºtkomu en
    <pre>
         SELECT sum(stig) / count(*) FROM felagar;
     </pre>
-  <li> Breytiğ skilgreiningu töflunnar <tt>sumarhus</tt> şannig ağ <tt>fermetrar</tt> megi ekki vera NULL
+  <li> BreytiÃ° skilgreiningu tÃ¶flunnar <tt>sumarhus</tt> Ã¾annig aÃ° <tt>fermetrar</tt> megi ekki vera NULL
    <pre>
         CREATE TABLE sumarhus(
                 husnr INTEGER,
@@ -153,7 +154,7 @@ Lausnir á tímaæfingum 11. ágúst
                 fj_ruma INTEGER);
 
    </pre>
-   <li> Reyniğ síğan ağ setja inn NULL şar
+   <li> ReyniÃ° sÃ­Ã°an aÃ° setja inn NULL Ã¾ar
     <pre>
         INSERT INTO sumarhus (husnr, stadur, fj_ruma)
             VALUES (1100, 'Fludir 2', 5);
@@ -163,7 +164,7 @@ Lausnir á tímaæfingum 11. ágúst
 
 <hr>
 <p>
-<a href="mailto:hh (hja) hi.is">hh (hja) hi.is</a>, 11. ágúst, 2021.
+<a href="mailto:hh (hja) hi.is">hh (hja) hi.is</a>, 11. Ã¡gÃºst, 2021.
 </body>
 
 </html>

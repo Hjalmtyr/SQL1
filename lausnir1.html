@@ -1,47 +1,47 @@
 <html>
 
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <head>
-<title> Gagnasöfn og SQL, lausnir á æfingum 1</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title> GagnasÃ¶fn og SQL, lausnir Ã¡ Ã¦fingum 1</title>
 </head>
 
 <body>
 
 <img src = "endurmennt.jpg" align=left hspace=20><p>
 <h1 align="center">
-Gagnasöfn og SQL
+GagnasÃ¶fn og SQL
 </h1>
 
 <h1 align="center">
-Lausnir á tímaæfingum 9. ágúst
+Lausnir Ã¡ tÃ­maÃ¦fingum 9. Ã¡gÃºst
 </h1>
 
 <br><br>
 <hr>
 
-<b>Æfingar um <tt>ORDER BY</tt> og <tt>LIMIT</tt>:</b>
+<b>Ã†fingar um <tt>ORDER BY</tt> og <tt>LIMIT</tt>:</b>
 <ul>
-  <li> Sına sumarhús í hækkandi röğ eftir fjölda rúma og lækkandi röğ eftir stærğ
+  <li> SÃ½na sumarhÃºs Ã­ hÃ¦kkandi rÃ¶Ã° eftir fjÃ¶lda rÃºma og lÃ¦kkandi rÃ¶Ã° eftir stÃ¦rÃ°
     <pre>
         SELECT * FROM sumarhus
             ORDER BY fj_ruma, fermetrar DESC;
 
     </pre>
-  <li> Sına upplısingar um stærsta sumarhúsiğ
+  <li> SÃ½na upplÃ½singar um stÃ¦rsta sumarhÃºsiÃ°
    <pre>
         SELECT * FROM sumarhus
             ORDER BY fermetrar DESC
             LIMIT 1;
 
    </pre>
-  <li> Sına nöfn og inngönguár şriggja nıjustu félagsmannanna
+  <li> SÃ½na nÃ¶fn og inngÃ¶nguÃ¡r Ã¾riggja nÃ½justu fÃ©lagsmannanna
    <pre>
         SELECT nafn, inng_ar FROM felagar
             ORDER BY inng_ar DESC
             LIMIT 3;
 
    </pre>
-  <li> Sına dagsetningu næstnıjustu leigunnar
+  <li> SÃ½na dagsetningu nÃ¦stnÃ½justu leigunnar
    <pre>
         SELECT dags FROM leigur
             ORDER BY dags DESC
@@ -50,27 +50,27 @@ Lausnir á tímaæfingum 9. ágúst
    </pre>
 </ul>
 <hr>
-<b>Æfingar um <tt>WHERE</tt> skilyrği:</b>
+<b>Ã†fingar um <tt>WHERE</tt> skilyrÃ°i:</b>
 <ul>
-  <li> Sına sumarhús meğ fleiri en 6 rúm
+  <li> SÃ½na sumarhÃºs meÃ° fleiri en 6 rÃºm
    <pre>
         SELECT * FROM sumarhus
             WHERE fj_ruma &gt; 6;
 
    </pre>
-  <li> Sına leigur á árinu 2021
+  <li> SÃ½na leigur Ã¡ Ã¡rinu 2021
    <pre>
         SELECT * FROM leigur
             WHERE dags &gt;= '2021-01-01' AND dags &lt;= '2021-12-31';
 
    </pre>
-  <li> Sına alla félaga í Reykjavík eğa Kópavogi sem hafa minna en 200 stig
+  <li> SÃ½na alla fÃ©laga Ã­ ReykjavÃ­k eÃ°a KÃ³pavogi sem hafa minna en 200 stig
    <pre>
         SELECT * FROM felagar
             WHERE (postnr &lt; '170' OR postnr = '200') AND stig &lt; 200;
 
    </pre>
-  <li> Sına şann félaga sem bır utan Reykjavíkur sem hefur mestan fjölda stiga
+  <li> SÃ½na Ã¾ann fÃ©laga sem bÃ½r utan ReykjavÃ­kur sem hefur mestan fjÃ¶lda stiga
    <pre>
         SELECT * FROM felagar
             WHERE postnr &gt; '155'
@@ -81,21 +81,21 @@ Lausnir á tímaæfingum 9. ágúst
 </ul>
 
 <hr>
-<b>Æfingar um reglulegar segğir:</b>
+<b>Ã†fingar um reglulegar segÃ°ir:</b>
 <ul>
-  <li> Sıniğ öll sumarhús meğ textann "vatn" í nafninu
+  <li> SÃ½niÃ° Ã¶ll sumarhÃºs meÃ° textann "vatn" Ã­ nafninu
    <pre>
         SELECT * FROM sumarhus
             WHERE stadur LIKE '%vatn%';
 
    </pre>
-  <li>Sıniğ allar leigur í júlí, óháğ ári
+  <li>SÃ½niÃ° allar leigur Ã­ jÃºlÃ­, Ã³hÃ¡Ã° Ã¡ri
    <pre>
         SELECT * FROM leigur
             WHERE dags LIKE '____-07-__';
 
    </pre>
-  <li>Sıniğ alla félagsmenn meğ nafn sem endar á "a" og hafa meira en 200 stig
+  <li>SÃ½niÃ° alla fÃ©lagsmenn meÃ° nafn sem endar Ã¡ "a" og hafa meira en 200 stig
    <pre>
         SELECT * FROM felagar
             WHERE nafn LIKE '%a' AND stig &gt; 200;
@@ -106,7 +106,7 @@ Lausnir á tímaæfingum 9. ágúst
 
 <hr>
 <p>
-<a href="mailto:hh (hja) hi.is">hh (hja) hi.is</a>, 9. ágúst, 2021.
+<a href="mailto:hh (hja) hi.is">hh (hja) hi.is</a>, 9. Ã¡gÃºst, 2021.
 </body>
 
 </html>

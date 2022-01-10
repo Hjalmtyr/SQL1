@@ -1,64 +1,65 @@
 <html>
 
 <head>
-<title> Gagnasöfn og SQL, heimaæfingar </title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title> GagnasÃ¶fn og SQL, heimaÃ¦fingar </title>
 </head>
 
 <body>
 
 <img src = "endurmennt.jpg" align=left hspace=20><p>
 <h1 align="center">
-Gagnasöfn og SQL
+GagnasÃ¶fn og SQL
 </h1>
 
 <h1 align="center">
-Heimaæfingar
+HeimaÃ¦fingar
 </h1>
 
 <br><br>
 <hr>
 
-Gagnasafniğ <a href="countries.db">countries.db</a> er skilgreint í skipanaskránni <a href="countries.sql">countries.sql</a>.  Şar er
-skilgreind taflan <tt>countries</tt> og gögn fyrir hana meğ ımsum (ansi gömlum!) upplısingum um lönd heimsins.  Taflan hefur dálkana:
+GagnasafniÃ° <a href="countries.db">countries.db</a> er skilgreint Ã­ skipanaskrÃ¡nni <a href="countries.sql">countries.sql</a>.  Ãar er
+skilgreind taflan <tt>countries</tt> og gÃ¶gn fyrir hana meÃ° Ã½msum (ansi gÃ¶mlum!) upplÃ½singum um lÃ¶nd heimsins.  Taflan hefur dÃ¡lkana:
 
 <ul>
-  <li> <tt>code</tt>: 3ja stafa auğkenni landsins
-  <li> <tt>name</tt>: nafn landsins á ensku
-  <li> <tt>surfacearea</tt>: stærğ landsins í km<sup>2</sup>
-  <li> <tt>population</tt>: mannfjöldi landsins
-  <li> <tt>lifeexpectancy</tt>: líflíkur landsmanna
-  <li> <tt>gnp</tt>: şjóğarframleiğsla í milljónum dollara
+  <li> <tt>code</tt>: 3ja stafa auÃ°kenni landsins
+  <li> <tt>name</tt>: nafn landsins Ã¡ ensku
+  <li> <tt>surfacearea</tt>: stÃ¦rÃ° landsins Ã­ km<sup>2</sup>
+  <li> <tt>population</tt>: mannfjÃ¶ldi landsins
+  <li> <tt>lifeexpectancy</tt>: lÃ­flÃ­kur landsmanna
+  <li> <tt>gnp</tt>: Ã¾jÃ³Ã°arframleiÃ°sla Ã­ milljÃ³num dollara
 </ul>
 <p>
 
-Setjiğ eftirfarandi fyrirspurnir fram í SQL og keyriğ şær á gagnasafninu.  Şiğ fáiğ lausnirnar í
-næsta tíma.
+SetjiÃ° eftirfarandi fyrirspurnir fram Ã­ SQL og keyriÃ° Ã¾Ã¦r Ã¡ gagnasafninu.  ÃiÃ° fÃ¡iÃ° lausnirnar Ã­
+nÃ¦sta tÃ­ma.
 <ol>
 
-  <li> Sıniğ nöfn şeirra 3ja landa sem hafa mestan mannfjölda.
+  <li> SÃ½niÃ° nÃ¶fn Ã¾eirra 3ja landa sem hafa mestan mannfjÃ¶lda.
 
-  <li> Sıniğ nöfn şeirra 10 landa sem hafa lægsta şjóğarframleiğslu.  Sıniğ ağeins şau lönd şar sem şjóğarframleiğslan er ekki 0.
+  <li> SÃ½niÃ° nÃ¶fn Ã¾eirra 10 landa sem hafa lÃ¦gsta Ã¾jÃ³Ã°arframleiÃ°slu.  SÃ½niÃ° aÃ°eins Ã¾au lÃ¶nd Ã¾ar sem Ã¾jÃ³Ã°arframleiÃ°slan er ekki 0.
 
-  <li> Sıniğ şau lönd sem hafa strenginn "Island" í nafni sínu.
+  <li> SÃ½niÃ° Ã¾au lÃ¶nd sem hafa strenginn "Island" Ã­ nafni sÃ­nu.
 
-  <li> Sıniğ şau lönd sem hafa nafn (á ensku) sem er 4 stafir eğa styttra.
+  <li> SÃ½niÃ° Ã¾au lÃ¶nd sem hafa nafn (Ã¡ ensku) sem er 4 stafir eÃ°a styttra.
 
-  <li> Sıniğ löndin í lækkandi röğ eftir şjóğarframleiğslu á mann (ş.e. <tt>gnp/population</tt>).
+  <li> SÃ½niÃ° lÃ¶ndin Ã­ lÃ¦kkandi rÃ¶Ã° eftir Ã¾jÃ³Ã°arframleiÃ°slu Ã¡ mann (Ã¾.e. <tt>gnp/population</tt>).
 
-  <li> Hvağa land er fimmta şéttbılasta landiğ?
+  <li> HvaÃ°a land er fimmta Ã¾Ã©ttbÃ½lasta landiÃ°?
 
-  <li> Samkvæmt töflunni eru 2.7 íbúar á km<sup>2</sup> á Íslandi.  Sıniğ şau lönd sem eru strjálbılli en Ísland
-       í lækkandi röğ eftir şjóğarframleiğslu.
+  <li> SamkvÃ¦mt tÃ¶flunni eru 2.7 Ã­bÃºar Ã¡ km<sup>2</sup> Ã¡ Ãslandi.  SÃ½niÃ° Ã¾au lÃ¶nd sem eru strjÃ¡lbÃ½lli en Ãsland
+       Ã­ lÃ¦kkandi rÃ¶Ã° eftir Ã¾jÃ³Ã°arframleiÃ°slu.
 
-  <li> Sıniğ şau lönd sem eru stærri en Ísland (103000.0 km<sup>2</sup>), minni en Frakkland (551500.0 km<sup>2</sup>)
-       og meğ lífslíkur a.m.k. 60 ár í röğ eftir şjóğarframleiğslu.
+  <li> SÃ½niÃ° Ã¾au lÃ¶nd sem eru stÃ¦rri en Ãsland (103000.0 km<sup>2</sup>), minni en Frakkland (551500.0 km<sup>2</sup>)
+       og meÃ° lÃ­fslÃ­kur a.m.k. 60 Ã¡r Ã­ rÃ¶Ã° eftir Ã¾jÃ³Ã°arframleiÃ°slu.
 
 </ol>
 
 
 <hr>
 <p>
-<a href="mailto:hh (hja) hi.is">hh (hja) hi.is</a>, 9. ágúst, 2021.
+<a href="mailto:hh (hja) hi.is">hh (hja) hi.is</a>, 9. Ã¡gÃºst, 2021.
 </body>
 
 </html>
