@@ -2,7 +2,7 @@
 --  Skipanaskrá til ağ búa til töflur fyrir Endurmenntunarnámskeiğ
 --      í SQL
 --
---  Hjálmtır Hafsteinsson, ágúst 2021.
+--  Hjálmtır Hafsteinsson, október 2022.
 ---------------------------------------------------------------------------
 
 -- Henda út gömlum útgáfum af töflum
@@ -71,22 +71,22 @@ insert into sumarhus (husnr, stadur, fermetrar, fj_ruma)
         values (1012, 'Grimsnes 45', 120, 10);
 
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (48, 1001, '2021-07-08', 7);
+        values (48, 1001, '2022-07-08', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (48, 1005, '2020-07-16', 7);
+        values (48, 1005, '2021-07-16', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (12, 1005, '2021-02-13', 3);
+        values (12, 1005, '2022-02-13', 3);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (32, 1004, '2019-06-20', 7);
+        values (32, 1004, '2020-06-20', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (32, 1004, '2021-08-05', 7);
+        values (32, 1004, '2022-08-05', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (85, 1002, '2021-07-01', 7);
+        values (85, 1002, '2022-07-01', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (85, 1001, '2020-11-05', 3);
+        values (85, 1001, '2021-11-05', 3);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (71, 1001, '2021-07-08', 7);
+        values (71, 1001, '2022-07-08', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (64, 1012, '2020-10-14', 3);
+        values (64, 1012, '2021-10-14', 3);
 
 
