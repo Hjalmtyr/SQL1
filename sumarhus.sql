@@ -2,7 +2,7 @@
 --  Skipanaskrá til ağ búa til töflur fyrir Endurmenntunarnámskeiğ
 --      í SQL
 --
---  Hjálmtır Hafsteinsson, mars 2023.
+--  Hjálmtır Hafsteinsson, október 2023.
 ---------------------------------------------------------------------------
 
 -- Henda út gömlum útgáfum af töflum
@@ -53,7 +53,7 @@ insert into felagar (fnr, nafn, postnr, stig, inng_ar)
 insert into felagar (fnr, nafn, postnr, stig, inng_ar)
         values (24, 'Gunnar', 107, 330, 1999);
 insert into felagar (fnr, nafn, postnr, stig, inng_ar)
-        values (85, 'Anna', 200, 110, 2014);
+        values (85, 'Anna', 200, 110, 2021);
 insert into felagar (fnr, nafn, postnr, stig, inng_ar)
         values (45, 'Birna', 112, 215, 2015);
 
@@ -62,7 +62,7 @@ insert into sumarhus (husnr, stadur, fermetrar, fj_ruma)
 insert into sumarhus (husnr, stadur, fermetrar, fj_ruma)
         values (1002, 'Laugarvatn 2', 65, 6);
 insert into sumarhus (husnr, stadur, fermetrar, fj_ruma)
-        values (1004, 'Reykir', 42, 5);
+        values (1004, 'Reykir', 55, 5);
 insert into sumarhus (husnr, stadur, fermetrar, fj_ruma)
         values (1005, 'Husafell A1', 50, 6);
 insert into sumarhus (husnr, stadur, fermetrar, fj_ruma)
@@ -71,22 +71,22 @@ insert into sumarhus (husnr, stadur, fermetrar, fj_ruma)
         values (1012, 'Grimsnes 45', 120, 10);
 
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (48, 1001, '2022-07-08', 7);
+        values (48, 1001, '2023-07-08', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (48, 1005, '2021-07-16', 7);
+        values (48, 1005, '2022-07-16', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (12, 1005, '2022-02-13', 3);
+        values (12, 1005, '2023-02-13', 3);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (32, 1004, '2020-06-20', 7);
+        values (32, 1004, '2021-06-20', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (32, 1004, '2022-08-05', 7);
+        values (32, 1004, '2023-08-05', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (85, 1002, '2022-07-01', 7);
+        values (85, 1002, '2023-07-01', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (85, 1001, '2021-11-05', 3);
+        values (85, 1001, '2022-11-05', 3);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (71, 1001, '2022-07-08', 7);
+        values (71, 1001, '2023-08-10', 7);
 insert into leigur (fnr, husnr, dags, fj_daga)
-        values (64, 1012, '2021-10-14', 3);
+        values (64, 1012, '2022-10-14', 3);
 
 
