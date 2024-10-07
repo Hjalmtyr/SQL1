@@ -1,12 +1,150 @@
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <title> Gagnasöfn og SQL </title>
-<meta http-equiv="refresh" content="0; url=https://endurmenntun.is" />
 </head>
+
 <body>
 
+<img src = "endurmennt.jpg" align=left hspace=20><p>
 
+<center> <h1>
+Gagnasöfn og SQL
+</h1>
+<h2>Október 2024</h2></center>
+<hr>
+<br>
 
+Þessi vefsíða inniheldur ýmislegt aukaefni í tengslum við námskeiðið <i>Gagnasöfn og SQL</i> hjá
+<a href="https://www.endurmenntun.is/">Endurmenntun Háskóla Íslands</a> í október 2024.
+Kennari er Hjálmtýr Hafsteinsson dósent í tölvunarfræði við Háskóla Íslands.
+<p>
+
+Kennsla í námskeiðinu er í tveimur hlutum:
+<ul>
+  <li> Fimmtudag 10. október kl. 13:00 - 16:00 
+  <li> Fimmtudag 17. október  kl. 13:00 - 16:00
+</ul>
+
+<b>Glærur:</b>
+<ul>
+   <li> <a href="SQL-I.pdf">Glærur fyrir 10. og 17. mars</a> (<a href="SQL6-I.pdf">6 glærur á síðu</a>)
+</ul>
+
+<b>Heimaæfingar:</b>
+<ul>
+  <li> <a href="verk1.html">Æfingar í SQL</a> <img src="nytt.gif">
+</ul>
+
+<hr>
+
+<p>
+<h3>Uppsetning:</h3>
+<ol>
+
+<font size="+1">
+
+  <li> Notað verður gagnasafnskerfið <a href="http://www.sqlite.org/">SQLite</a>.  Það fylgir með á MacOS og Linux, en við þurfum að ná í Windows útgáfuna. <br><br>
+    <ul>
+      <li> <b>Windows:</b>  Náið í skránna <a href="sqlite3.exe">sqlite3.exe</a> (hægri-smella og "Save link as...") og vistið hana í nýrri möppu á tölvunni.
+      <li> <b>MacOS:</b>  Opna "Terminal" glugga (sjá <a href="https://www.youtube.com/watch?v=iyXYwNQC6ag">myndband</a>) og gefa skipunina <b><tt>sqlite3</tt></b>
+      <li> <b>Linux:</b>  Opna "Terminal" glugga og gefa skipunina <b><tt>sqlite3</tt></b>
+    </ul>
+    <br>
+  <li> Náið svo í sýnisgagnasafnið <a href="sumarhus.db">sumarhus.db</a> (hægri-smella og "Save link as...") og vistið það í sömu möppu og <b><tt>sqlite3.exe</tt></b> (í Windows).
+
+  <li> Ræsið síðan skipanalínuviðmót SQLite með því að keyra skránna <b><tt>sqlite3</tt></b> (þ.e. <b><tt>sqlite3.exe</tt></b> í Windows)
+
+  <li> Þegar SQLite er komið í keyrslu bíður það eftir skipunum frá ykkur.  Gefið þá skipunina "<b><tt>.open sumarhus.db</tt></b>" (munið eftir punktinum
+    fremst og ekki slá inn gæsalappirnar!).  Þetta opnar sýnisgagnasafnið <a href="sumarhus.pdf">Sumarhús</a> með upplýsingum um útleigu á sumarhúsum.
+</ol>
+
+</font>
+<hr>
+
+<b>Sýnisgagnasafn</b>
+
+<ul>
+  <li> Sýnisgagnasafnið sem við notum er í skránni <b><tt>sumarhus.db</tt></b> og hér eru <a href="sumarhus.pdf">gögnin í henni</a>.  Það inniheldur
+     ýmsar upplýsingar um útleigu á sumarhúsum.
+
+  <li> Hér er skipanaskrá sem býr til töflurnar og sýnisgögnin:  <a href="sumarhus.sql">sumarhus.sql</a>
+     
+  <li> Hér er listi yfir <a href="SQLite-skipanir.pdf">skipanir</a> sem hægt er að nota í SQLite (fæst með skipuninni <tt>.help</tt>).  Þær
+     skipanir sem við notum mest eru feitletraðar.
+
+</ul>
+
+<p>
+<b>SQLite heimildir</b>
+<ul>
+
+  <li> Það er til <a href="http://www.sqlite.org/cli.html">ágæt lýsing</a> á skipanalínuviðmóti SQLite sem við notum
+
+  <li> <a href="http://www.sqlite.org/lang.html">Sá hluti af SQL92 staðlinum sem SQLite ræður við</a>
+
+  <li> Það eru örfáir hlutir úr SQL92 sem <a href="http://www.sqlite.org/omitted.html">SQLite útfærir ekki</a>, en enginn þeirra er sérlega mikilvægur
+
+  <li> <a href="https://www.youtube.com/watch?v=Jib2AmRb_rk">Fyrirlestur Richard Hipp</a> um SQLite (frumkóði SQLite: <a href="sqlite3.c">sqlite3.c</a>)
+ 
+  <li> <a href="https://dl.acm.org/doi/pdf/10.1145/3377330.3377338">Nýlegt viðtal við Richard Hipp</a>
+  
+  <li> <a href="https://corecursive.com/066-sqlite-with-richard-hipp/">Nördahlaðvarp með viðtal við Richard Hipp</a>
+ 
+</ul>
+
+<b>Notendavænni viðmót á SQLite:</b>
+<ul>
+  <li> <a href="http://sqliteonline.com/">sqlite.online</a> - SQLite sem keyrir í vafra.  Engin uppsetning!
+
+  <li> <a href="http://sqlitebrowser.org/">DB Browser for SQLite</a> - Opið og frítt (<i>open source</i>) viðmót, til fyrir Windows, Mac og Linux
+
+  <li> <a href="https://www.yunqa.de/delphi/apps/sqlitespy/index">SQLiteSpy</a> - Þetta viðmót er aðeins fyrir Windows, en er frítt, einfalt og engin uppsetning.
+
+</ul>
+
+<p>
+<b>Annað SQL kennsluefni</b>
+<ul>
+
+  <li> <a href="http://sqlzoo.net/">A Gentle Introduction to SQL</a> - nokkuð góð gagnvirk kennslusíða um SQL
+  
+  <li> <a href="https://sqlbolt.com">SQLBolt</a> - önnur gagnvirk kennslusíða um SQL
+
+  <li> <a href="http://www.sqlitetutorial.net">SQLite Tutorial</a> - góð kennslusíða um SQLite og SQL
+  
+  <li> <a href="https://www.tutorialspoint.com/sqlite/index.htm">SQLite Tutorial</a> - meira kennsluefni um SQLite og SQL
+
+  <li> <a href="http://www.zentut.com/sql-tutorial/">SQL Tutorial</a> - ágæt kennslusíða um SQL, með <a href="http://www.zentut.com/sql-tutorial/sql-cheat-sheet/">yfirlitsblaði</a> um SQL
+
+  <li> <a href="http://en.wikipedia.org/wiki/Sql">Wikipedia</a> er með ágæta yfirlitsgrein um SQL, þó hún sé ekki beint góð til að læra SQL
+
+</ul>
+
+<p>
+<b>Háskólanámskeið um Gagnasafnsfræði</b>
+<ul>
+
+  <li> <a href="https://15445.courses.cs.cmu.edu/fall2023/schedule.html">Database Systems</a> - nýlegt námskeið frá Carnegie Mellon háskólanum.  Farið
+      mjög hratt yfir SQL (bara fyrsta vikan!)
+
+  <li> <a href="https://www.edx.org/course/databases-5-sql">Databases: Relational Databases and SQL</a> frá Stanford er eitt þekktasta
+      námskeiðið um gagnasafnsfræði.  Það þarf að skrá sig þar inn og síðan hægt að velja "<i>Audit This Course</i>".
+       
+  <li> <a href="https://www.coursera.org/learn/intro-sql">Introduction to Structured Query Language (SQL)</a> - námskeið á 
+      <a href="https://www.coursera.org">Coursera</a> frá háskólanum í Michigan sem kennir á gagnasöfn út frá vef sjónarhorni (veljið "Enroll" 
+      og síðan "Audit course", í smáu letri neðst!)
+
+  <li> <a href="https://www.coursera.org/learn/database-management">Database Management Essentials</a> - námskeið á Coursera frá viðskiptafræðideild
+      háskólans í Colorado  (veljið "Enroll" og síðan "Audit course", í smáu letri neðst!)
+      
+</ul>
+
+<hr>
+
+<a href="mailto:hh@hi.is">hh@hi.is</a>, október 2024.
+<br>
 </body>
+
 </html>
 

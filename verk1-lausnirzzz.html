@@ -1,0 +1,116 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title> Gagnasöfn og SQL, lausnir á heimaæfingum </title>
+</head>
+
+<body>
+
+<img src = "endurmennt.jpg" align=left hspace=20><p>
+<h1 align="center">
+Gagnasöfn og SQL
+</h1>
+
+<h1 align="center">
+Heimaæfingar 1, lausnir
+</h1>
+
+<br><br>
+<hr>
+
+Gagnasafnið <a href="countries.db">countries.db</a> er skilgreint í skipanaskránni <a href="countries.sql">countries.sql</a>.  Þar er
+skilgreind taflan <tt>countries</tt> og gögn fyrir hana með ýmsum (gömlum) upplýsingum um lönd heimsins.  Taflan hefur dálkana:
+
+<ul>
+  <li> <tt>code</tt>: 3ja stafa auðkenni landsins
+  <li> <tt>name</tt>: nafn landsins á ensku
+  <li> <tt>surfacearea</tt>: stærð landsins í km<sup>2</sup>
+  <li> <tt>population</tt>: mannfjöldi landsins
+  <li> <tt>lifeexpectancy</tt>: líflíkur landsmanna
+  <li> <tt>gnp</tt>: þjóðarframleiðsla í milljónum dollara
+</ul>
+<p>
+
+Setjið eftirfarandi fyrirspurnir fram í SQL og keyrið þær á gagnasafninu.  Lausn hvers dæmis kemur á eftir því.
+<ol>
+
+  <li> Sýnið nöfn þeirra 3ja landa sem hafa mestan mannfjölda.
+    <pre>
+          select name, population from countries
+              order by population desc
+              limit 3;
+
+    </pre>
+
+  <li> Sýnið nöfn þeirra 10 landa sem hafa lægsta þjóðarframleiðslu.  Sýnið aðeins þau lönd þar sem þjóðarframleiðslan er ekki 0.
+    <pre>
+          select name, gnp from countries
+              where gnp > 0
+              order by gnp
+              limit 10;
+
+    </pre>
+
+  <li> Sýnið þau lönd sem hafa strenginn "Island" í nafni sínu.
+    <pre>
+          select * from countries
+              where name like '%Island%';
+
+    </pre>
+
+  <li> Sýnið þau lönd sem hafa nafn (á ensku) sem er 4 stafir eða styttra.
+    <pre>
+          select name from countries
+              where name not like '_____%';
+
+    </pre>
+
+  <li> Sýnið löndin í lækkandi röð eftir þjóðarframleiðslu á mann.
+    <pre>
+          select name, gnp/population*1000000.0 as gnppp
+              from countries
+              order by gnppp desc
+              limit 10;
+
+    </pre>
+
+  <li> Hvaða land er fimmta þéttbýlasta landið?
+    <pre>
+          select name, population/surfacearea as density
+              from countries
+              order by density desc limit 1 offset 4;
+
+    </pre>
+
+  <li> Samkvæmt töflunni eru 2.7 íbúar á km<sup>2</sup> á Íslandi.  Sýnið þau lönd sem eru strjálbýlli en Ísland
+       í lækkandi röð eftir þjóðarframleiðslu.
+    <pre>
+          select name, gnp, population/surfacearea
+              from countries
+              where population/surfacearea &lt; 2.7
+              order by gnp desc;
+
+    </pre>
+
+  <li> Sýnið þau lönd sem eru stærri en Ísland (103000.0 km<sup>2</sup>), minni en Frakkland (551500.0 km<sup>2</sup>)
+       og með lífslíkur a.m.k. 60 ár í röð eftir þjóðarframleiðslu.
+    <pre>
+          select name, gnp, surfacearea, lifeexpectancy
+              from countries
+              where surfacearea > 103000 and
+                    surfacearea &lt; 551500 and
+                    lifeexpectancy >= 60
+              order by gnp;
+
+    </pre>
+
+</ol>
+
+
+<hr>
+<p>
+<a href="mailto:hh (hja) hi.is">hh (hja) hi.is</a>, 17. október, 2024.
+</body>
+
+</html>
